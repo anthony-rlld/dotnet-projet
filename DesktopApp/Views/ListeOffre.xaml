@@ -13,16 +13,16 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <ListView Grid.Column="0"  Grid.Row="0" Grid.RowSpan="3" Margin="5px" ItemsSource="{Binding Offres, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedOffres, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+        <ListView Grid.Column="0"  Grid.Row="0" Grid.RowSpan="3" Margin="5" ItemsSource="{Binding Offres, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedOffres, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Width="100px" Header="Intitule" DisplayMemberBinding="{Binding Intitule}" />
-                    <GridViewColumn Width="150px" Header="Date" DisplayMemberBinding="{Binding Date}" />
+                    <GridViewColumn Header="Intitule" DisplayMemberBinding="{Binding Intitule}" />
+                    <GridViewColumn Header="Date" DisplayMemberBinding="{Binding Date, StringFormat='{}{0:dd/MM/yyyy}'}" />
                 </GridView>
             </ListView.View>
         </ListView>

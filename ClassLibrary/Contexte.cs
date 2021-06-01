@@ -13,7 +13,7 @@ namespace ClassLibrary
     {
         public Contexte() : base("name=Connexion")
         {
-            Database.SetInitializer<Contexte>(null);
+            //Database.SetInitializer<Contexte>(null);
         }
 
 
