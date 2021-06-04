@@ -35,11 +35,11 @@
                     IsEnabled="{Binding ElementName=toggleModif, Path=IsChecked}"/>
 
         <StackPanel Margin="0,0,0,10" Grid.Column="5" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Label Content="Modification" VerticalAlignment="Center"></Label> 
+            <Label Content="Modification" VerticalAlignment="Center"></Label>
             <ToggleButton x:Name="toggleModif" materialDesign:HintAssist.Hint="Modification" Style="{StaticResource MaterialDesignSwitchToggleButton}"
                       ToolTip="MaterialDesignActionToggleButton" materialDesign:ShadowAssist.ShadowDepth="Depth3"/>
         </StackPanel>
-            
+
         <TextBox materialDesign:HintAssist.Hint="Salaire"  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                  Margin="0,0,0,10" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Text="{Binding Salaire, StringFormat={}{0:##.00}€}"
                  IsEnabled="{Binding ElementName=toggleModif, Path=IsChecked}"/>
@@ -52,6 +52,6 @@
                  Margin="0,0,0,10" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" TextWrapping="Wrap" AcceptsReturn="True"
                  VerticalAlignment="Stretch" VerticalScrollBarVisibility="Visible" Text="{Binding Description}" 
                  IsEnabled="{Binding ElementName=toggleModif, Path=IsChecked}"/>
- 
+
     </Grid>
 </UserControl>
