@@ -1,10 +1,12 @@
 ﻿using ClassLibrary.Entities;
 using DesktopApp.ViewModels.Common;
+using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace DesktopApp.ViewModels
 {
@@ -18,6 +20,7 @@ namespace DesktopApp.ViewModels
         private string _responsable;
         private Statut _statut;
         private ICollection<Postulation> _postulations;
+        private RelayCommand _saveOffre;
 
         /// <summary>
         /// Constructeur par défaut
@@ -117,6 +120,24 @@ namespace DesktopApp.ViewModels
                 _postulations = value;
                 OnPropertyChanged("Postulations");
             }
+        }
+
+        /// <summary>
+        /// Commande pour sauvegarder une offre
+        /// </summary>
+        public ICommand SaveOffre
+        {
+            get
+            {
+                if (_saveOffre == null)
+                    _saveOffre = new RelayCommand(() => this.saveOffre());
+                return _saveOffre;
+            }
+        }
+
+        private void saveOffre()
+        {
+            // Todo : Save l'offre en BDD
         }
     }
 }
